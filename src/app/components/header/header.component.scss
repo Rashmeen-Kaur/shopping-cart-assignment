@@ -1,0 +1,152 @@
+@import '../../../styles/layout.scss';
+@import '../../../styles/constants.scss';
+
+header {
+    box-shadow: 0px 3px 5px 0px $ab-lt-grey;
+    background-color: $ab-white;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
+    div.container {
+        @include flex;
+    
+        .logo {
+            flex: 0 1 20%;
+            
+            img {
+                width: 75%;
+                padding: 5px;
+
+                @include media-breakpoint-only(md) {
+                    /* width: 80%; */
+                    padding: 3% 0;
+                }
+
+                @include media-breakpoint-down(sm) {
+                    width: 100%;
+                }
+            }
+        }
+    
+        nav.navigation {
+            flex: 1;
+            margin: 3.5% 0 0 2%;
+
+            ul {
+                li {
+                    margin-left: 6%;
+    
+                    a {
+                        color: $ab-dk-grey;
+                        font-weight: $font-bold;
+                    }
+                }
+            }
+
+            @include media-breakpoint-down(sm) {
+                display: none;
+            }
+        }
+        
+        .mobile-nav-container {
+            @include flex-1;
+            position: relative;
+
+            @include media-breakpoint-down(sm) {
+                display: block !important;
+            }
+
+            button {
+                background-color: $ab-lt-grey;
+                color: $ab-black;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+            }
+
+            nav {
+                position: absolute;
+                top: 100%;
+                width: 100%;
+                background-color: $ab-lt-grey;
+                border: 1px solid $ab-lt-grey-2;
+
+                .line-break {
+                    margin: 5px 0;
+                    border-bottom: 1px solid $ab-lt-grey-2;
+                }
+
+                ul {
+                    @include flex-column;
+                    margin: 10px 30px !important;
+
+                    li {
+                        padding: 5px 0;
+                    }
+
+                    a {
+                        color: inherit !important;
+                    }
+                }
+            }
+        }
+ 
+        .actions {
+            flex: 0 1 20%;
+            position: relative;
+
+            nav ul {
+                @include flex;
+                justify-content: flex-end;
+
+                li {
+                    margin: 0 2%;
+                    
+                    a {
+                        color: $ab-black;
+                        font-size: $font-12;
+                    }
+                }
+
+                @include media-breakpoint-down(sm) {
+                    display: none;
+                }
+            }
+
+            #cart-icon {
+                width: 28px;
+                height: 28px;
+                fill: $ab-pink;
+            }
+
+            button {
+                @include flex-center;
+                color: $ab-black;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                padding: 4% 12%;
+                background: $ab-lt-grey;
+                font-weight: $font-semi-bold;
+                cursor: pointer;
+                border: unset;
+
+                #cart-count {
+                    margin-left: 10%;
+                    white-space: nowrap;
+                    font-size: $font-13;
+                }
+
+                @include media-breakpoint-down(md) {
+                    padding: 4% 15%;
+                }
+
+                @include media-breakpoint-down(sm) {
+                    top: 0;
+                }
+            }
+        }
+    
+    }
+}

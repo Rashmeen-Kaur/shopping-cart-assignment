@@ -1,0 +1,19 @@
+@import '../../../styles/constants.scss';
+@import '../../../styles/layout.scss';
+
+footer {
+    background-color: $ab-lt-grey;
+    width: 100%;
+
+    p {
+        font-weight: $font-semi-bold;
+        padding: 12px 0 !important;
+        margin: 0 auto;
+
+        @include media-breakpoint-down(md) {
+            padding: 5px 0 !important;
+            text-align: center;
+        }
+    } 
+
+}

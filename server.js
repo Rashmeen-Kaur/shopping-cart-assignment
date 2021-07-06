@@ -1,10 +1,10 @@
 const express = require('express');
-const app =  express();
+const app = express();
 const path = require('path');
 const fs = require('fs');
 const cors = require('cors');
 
-const PORT = 5000;
+const PORT = 3000;
 const DATA_PATH = path.resolve(__dirname, './server');
 
 const readDataFile = (method, name) => {
@@ -19,7 +19,7 @@ const addToCart = readDataFile('post', 'addToCart');
 
 const logger = (req, res, next) => {
     console.info(`request: ${req.method} ${req.url}`);
-    next();    
+    next();
 }
 
 app.use(cors());
@@ -46,7 +46,7 @@ app.post('/signin', (req, res) => {
 });
 
 app.post('/signup', (req, res) => {
-    res.send({ response: 'Success', responseMessage: 'Signup successful' });
+    res.status(200).send({ response: 'Success', responseMessage: 'Signup successful' });
 });
 
 app.listen(PORT, () => {
