@@ -1,2 +1,23 @@
 <app-banner></app-banner>
 
+<ng-container *ngFor="let category of categories">
+    <section *ngIf="category.enabled">
+        <div class="row category">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center category-image">
+                <img [src]="category.imageUrl | imgSrc" [alt]="category.name">
+            </div>
+    
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-center category-details">
+                <h3 class="category-name">
+                    {{category.name}}
+                </h3>
+                <p class="category-desc">
+                    {{category.description}}
+                </p>
+                <button class="category-explore" [routerLink]="['/product-list', category.key]">
+                    Explore {{category.key}}
+                </button>
+            </div>
+        </div>
+    </section>
+</ng-container>

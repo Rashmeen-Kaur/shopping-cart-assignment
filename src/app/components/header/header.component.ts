@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Cart, initialCart } from 'src/app/models/cart.model';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-header',
@@ -7,11 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  
+  cart: Cart = initialCart;
   isSmMenuOpened: boolean =false;
 
-  constructor() { 
-   
+  constructor(private cartService: CartService) { 
+    this.cartService.cartSubscription().subscribe(
+      data => {
+        this.cart = data;
+      } 
+    )
   }
 
   ngOnInit(): void {
@@ -35,5 +41,7 @@ export class HeaderComponent implements OnInit {
     });
   }
 
-  
+  showCart() {
+    this.cartService.cartContainerOpened(true);
+  }
 }

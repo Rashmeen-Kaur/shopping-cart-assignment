@@ -12,7 +12,7 @@ export class SignInComponent implements OnInit {
 
   @ViewChild('loginForm') loginForm: NgForm | any;
 
-  pattern = '^(?=.*[0-9])(?=.*[a-zA-Z])(?!.*[\s]).{6,18}$';
+  pattern = '^(?=.*[A-Za-z])(?=.*[0-9])[A-Za-z0-9]{6,}$';
 
   constructor(
     private dataService: DataService,
