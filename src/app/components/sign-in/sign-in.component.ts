@@ -29,7 +29,13 @@ export class SignInComponent implements OnInit {
     .subscribe(
       data => {
         console.log(data);
-        this.router.navigate(['/home']);
+        if(data.response == 'S'){
+          window.alert(data.responseMessage);
+          this.router.navigate(['/home']);
+        }else{
+          window.alert(data.responseMessage);
+        }
+        
       });
   }
 }

@@ -16,6 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ImgSrcPipe } from './pipes/img-src.pipe';
 import { BannerComponent } from './components/banner/banner.component';
 import { CartComponent } from './components/cart/cart.component';
+import { CountUpdateButtonComponent } from './components/count-update-button/count-update-button.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +31,8 @@ import { CartComponent } from './components/cart/cart.component';
     ImgSrcPipe,
     ProductComponent,
     CategorySidenavComponent,
-    ProductListComponent
+    ProductListComponent,
+    CountUpdateButtonComponent
   ],
   imports: [
     BrowserModule,
