@@ -44,7 +44,7 @@
                 <label for="password" aria-labelledby="password">Password</label>
                 <span id="pwd-error" *ngIf="signupForm.get('password').touched  && signupForm.get('password').invalid"
                     class="form-control-error" aria-live="assertive">
-                    Password must be between 6-18 characters, must contain 1 letter and 1 number and whitespaces not allowed
+                    Password must contain minimum 6 characters, must contain 1 letter and 1 number and whitespaces not allowed
                 </span>
             </div>
             
@@ -59,8 +59,9 @@
             </div>
 
             <br>
-
+           
             <button type="submit" [disabled]="signupForm.invalid">Signup</button>
         </form>
     </section>
+    
 </div>
