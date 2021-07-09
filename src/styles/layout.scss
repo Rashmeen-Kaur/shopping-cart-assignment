@@ -1,0 +1,93 @@
+@import "~/node_modules/bootstrap/scss/bootstrap.scss";
+@import './constants.scss';
+
+/* 
+Inbuilt breakpoint mixins of Bootstrap
+    media-breapoint-down(bp) => (max-width: xx)
+    media-breakpoint-up(bp)  => (min-width: xx)
+*/
+
+
+@include media-breakpoint-up(md) {
+    .container {
+        max-width: 75% !important;
+        padding: 0 !important;
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .container {
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+}
+
+@mixin flex {
+    display: flex;
+}
+
+@mixin flex-1 {
+    @include flex;
+    flex: 1;
+}
+
+@mixin flex-column {
+    @include flex;
+    flex-direction: column;
+}
+
+@mixin flex-center {
+    @include flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-1 {
+    @include flex-1;
+}
+
+
+/** Form Styles **/
+
+.form-floating {
+    @include flex-column;
+
+    input {
+        padding: 0;
+        height: 25px;
+        border: 0 !important;
+        border-bottom: 1px solid $ab-md-grey !important;
+        border-radius: 0;
+        outline: 0 !important;
+        box-shadow: unset;
+        order: 2;
+        transition: border-bottom 0.1s;
+    }
+    
+    label {
+        margin: 0;
+        font-size: $font-12;
+        order: 1;
+        color: $ab-dk-grey;
+        transition: color 0.1s;
+    }
+    
+    .form-control-error {
+        order: 3;
+        color: $ab-pink;
+        font-size: $font-12;
+        margin-top: 5px;
+    }
+
+    input:focus + label {
+        color: $ab-aqua;
+    }
+    
+    input:focus {
+        border-bottom: 2px solid $ab-aqua !important;
+    }
+}
+
+
+
